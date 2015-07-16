@@ -1,0 +1,54 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- The HTML 4.01 Transitional DOCTYPE declaration-->
+<!-- above set at the top of the file will set     -->
+<!-- the browser's rendering engine into           -->
+<!-- "Quirks Mode". Replacing this declaration     -->
+<!-- with a "Standards Mode" doctype is supported, -->
+<!-- but may lead to some differences in layout.   -->
+
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>データ</title>
+    <script type="text/javascript" src="lib.js"></script>
+        <script type="text/javascript">
+        <!--
+        function callback(request){
+            var json = eval(request.responseText);
+            var res = '';
+            if (json.length == 1){
+                res += '<tr><td>' + json[0].id +'</td></tr>';
+                res += '<tr><td>' + json[0].choco1 +'</td></tr>';
+                res += '<tr><td>' + json[0].choco2 +'</td></tr>';
+                res += '<tr><td>' + json[0].choco3 +'</td></tr>';
+                res += '<tr><td>' + json[0].choco4 +'</td></tr>';
+                res += '<tr><td>' + json[0].choco5 +'</td></tr>';
+                res += '<tr><td>' + json[0].total +'</td></tr>';
+            } else {
+                for (var i = 0;i < json.length;i++){
+                    
+                    res += '<td><a href="' + json[i].id + '">' + 'マカダミアナッツ:' + json[i].choco1 +'個,  キスチョコ:' + json[i].choco2 +'個,  カントチーニチョコ:' 
+                    + json[i].choco3 +'個,  ティムタムチョコ:' + json[i].choco4 +'個,  ホワイトアンドゴールドチョコ:' + json[i].choco5 +'個</a></td></tr>';
+                }
+            }
+            var obj = document.getElementById("datatable");
+            obj.innerHTML = res;
+        }
+        //-->
+        </script>
+  </head>
+  <body onload="getData(null);">
+  <h>発注完了しました。</h><br><br>
+  ----------------------------------------------------------------------------------------------------<br><br>
+  
+    <h>購入履歴</h>
+     
+    <table id="datatable" border="1">
+      <tr>
+        <td>wait...</td>
+      </tr>
+    </table>
+    <br>
+    <div><a href="/BoutiqueList.jsp">商品選択画面へ戻る</a></div>
+    <div><a href="/Welcome.jsp">トップへ</a></div>
+</html>

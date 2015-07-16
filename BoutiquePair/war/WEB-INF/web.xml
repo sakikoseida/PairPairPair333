@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns="http://java.sun.com/xml/ns/javaee"
+xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+	<servlet>
+		<servlet-name>NewUser</servlet-name>
+		<servlet-class>pair.NewUserServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	<servlet-name>NewUser</servlet-name>
+	<url-pattern>/import.do</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>BoutiquePairServlet</servlet-name>
+		<servlet-class>pair.BoutiquePairServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	<servlet-name>BoutiquePairServlet</servlet-name>
+	<url-pattern>/chocolate</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>ChocoStore</servlet-name>
+		<servlet-class>pair.BoutiqueStoreServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>BoutiqueStore</servlet-name>
+		<url-pattern>/chocolate</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>Import</servlet-name>
+		<servlet-class>pair.ImportOK</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	<servlet-name>Import</servlet-name>
+	<url-pattern>/import2.do</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>BoutiqueList</servlet-name>
+		<servlet-class>pair.BoutiqueList</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>BoutiqueList</servlet-name>
+		<url-pattern>/cart.do</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>newuser_linkdata</servlet-name>
+		<servlet-class>pair.NewUserServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>newuser_linkdata</servlet-name>
+		<url-pattern>/NewUser</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+	<servlet-name>addNewUser</servlet-name>
+	<servlet-class>pair.AddLinkDataServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	<servlet-name>addNewUser</servlet-name>
+	<url-pattern>/add</url-pattern>
+	</servlet-mapping>
+	
+	<welcome-file-list>
+		<welcome-file>Welcome.jsp</welcome-file>
+	</welcome-file-list>
+	
+
+</web-app>
